@@ -1,4 +1,5 @@
 <script>
+  let id = 1
   export default {
     data: ()=> ({
       todos: [],
@@ -6,11 +7,26 @@
     }),
     methods: {
       addTodo() {
-        this.todos.push({todo: this.newItem, completed: false})
-        this.newItem = ''
+        if (this.newItem.length >= 3) {
+          this.todos.push({ id: id++, todo: this.newItem, completed: false })
+          this.newItem = ''
+        }
       },
       markComplete(todo) {
         todo.completed = !todo.completed
+      },
+      removeTodo(todo) {
+        // console.log(todo.id)
+        const todoIndex = this.todos.findIndex(el => {
+          return el.id === todo.id
+        })
+        // console.log(todoIndex)
+        this.todos.splice(todoIndex, 1)
+      }
+    },
+    computed: {
+      reverseList() {
+        return [...this.todos].reverse()
       }
     }
   }
@@ -21,15 +37,25 @@
     <div class="card">
       <h1 v-if="todos.length === 0">What would you like to get done today?</h1>
       <h1 v-else>Todos</h1>
-      <input v-model="newItem" type="text" placeholder="Add a todo">
-      <button @click="addTodo">bang button</button>
+
+      <div class="input-container">
+        <input @keyup.enter="addTodo" v-model="newItem" type="text" placeholder="Add a todo">
+        <button class="add-btn" :disabled="newItem.length < 3" @click="addTodo">+</button>
+      </div>
+
       <ul>
-        <li v-for="todo in todos"
+        <li
+          v-for="todo in reverseList"
           :class="{completed: todo.completed}"
           @click="markComplete(todo)"
-        >
+          :key="todo.id">
           {{todo.todo}}
-          {{todo.completed}}
+            <button
+              class="delete-btn"
+              v-if="todo.completed === true"
+              @click="removeTodo(todo)">
+              x
+            </button>
         </li>
       </ul>
     </div>
@@ -37,6 +63,51 @@
 </template>
 
 <style scoped>
+h1 {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 2px 0;
+  margin: 0;
+  border: none;
+}
+
+ul {
+  width: 75%;
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  text-align: left;
+  margin: .75rem 0;
+}
+
+.input-container {
+  position: relative;
+}
+
+.add-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  background-color: lightslategrey;
+  border: none;
+  height: 100%;
+  width: 10%;
+}
+
+.delete-btn {
+  margin-left: 2rem;
+  color: white;
+  background-color: lightslategrey;
+  border: none;
+  height: 100%;
+}
 
 .container {
   display: flex;
@@ -48,13 +119,15 @@
 
 .card {
   height: fit-content;
-  width: 300px;
+  width: 500px;
+  color: white;
   background-color: rgba(228, 228, 228, 0.329);
   backdrop-filter: blur(5px);
   border-radius: 10px;
+  padding: 2rem;
 }
 
 .completed {
-  color: red;
+  text-decoration: line-through;
 }
 </style>
