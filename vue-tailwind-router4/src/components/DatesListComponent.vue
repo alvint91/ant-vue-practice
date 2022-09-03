@@ -10,7 +10,6 @@ export default {
         'sunday, may 22',
         'monday, may 23',
         'tuesday, may 23',
-
       ]
     };
   }

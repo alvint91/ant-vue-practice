@@ -1,21 +1,10 @@
-<script setup>
-// import TheWelcome from '@/components/TheWelcome.vue'
-import HeroComponent from '@/components/HeroComponent.vue';
-// import DatesListComponent from '@/components/DatesListComponent.vue';
-import VenuesComponent from '@/components/VenuesComponent.vue';
-// import FooterComponent from '@/components/FooterComponent.vue';
-// import TalentComponent from '@/components/TalentComponent.vue';
-import ImageComponent from '@/components/icons/SvgComponent.vue'
-
-</script>
+<!-- <script setup> -->
+<script></script>
 
 <template>
-  <main>
-    <HeroComponent />
-    <!-- <ImageComponent /> -->
-    <!-- <TheWelcome />
-    <DatesListComponent />
-    <TalentComponent /> -->
-    <VenuesComponent />
-  </main>
+  <div class="h-[312px]">
+    <img
+      src="https://dm3381rcqf07k.cloudfront.net/multisite.insomniac.com/wp-content/uploads/sites/56/2022/05/25081917/edcw_2022_mk_an_fs_mh_750x600_r01.jpg"
+      alt="" />
+  </div>
 </template>
