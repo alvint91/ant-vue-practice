@@ -1,4 +1,9 @@
 <script>
+
+// import SvgComponent from './icons/SvgComponent.vue'
+import ImageComponent from './icons/SvgComponent.vue'
+import TestComponent from './TheWelcome.vue'
+
 export default {
   data() {
     return {
@@ -21,7 +26,7 @@ export default {
         'club',
         'club',
         'club',
-        'club',
+        'club'
       ]
     };
   }
@@ -29,7 +34,9 @@ export default {
 </script>
 
 <template>
-  <div
+  <ImageComponent />
+  <TestComponent />
+  <!-- <div
     class="bg-white px-4 text-center h-[30px] flex items-center justify-center">
     <h3>2022 VENUES</h3>
   </div>
@@ -39,7 +46,7 @@ export default {
       v-for="item in items">
       <h1 class="uppercase h-fit">{{ item }}</h1>
     </button>
-  </div>
+  </div> -->
 </template>
 
 <style scoped></style>
