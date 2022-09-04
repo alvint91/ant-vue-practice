@@ -1,34 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      items: [
-        'above & beyond',
-        'areial grey',
-        'alan walker',
-        'alesso',
-        'ann clue',
-        'armin van buuren',
-        'artbat',
-        'atliens',
-        'bad beat',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-      ]
-    };
-  }
-};
-</script>
-
 <template>
   <div
     class="bg-white px-4 text-center h-[30px] flex items-center justify-center">
@@ -44,8 +13,27 @@ export default {
         {{ item }}
       </span> -->
     </div>
-
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: [
+        'above & beyond',
+        'areial grey',
+        'alan walker',
+        'alesso',
+        'ann clue',
+        'armin van buuren',
+        'artbat',
+        'atliens',
+        'bad beat',
+      ]
+    };
+  }
+};
+</script>
 
 <style scoped></style>
