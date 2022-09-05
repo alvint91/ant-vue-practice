@@ -1,3 +1,11 @@
+<template>
+  <div class="bg-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+    <div v-for="image in images">
+      <img :src="image"/>
+    </div>
+  </div>
+</template>
+
 <script>
 export default {
   data() {
@@ -20,13 +28,5 @@ export default {
   }
 };
 </script>
-
-<template>
-  <div class="bg-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-    <div v-for="image in images">
-      <img :src="image" alt="" />
-    </div>
-  </div>
-</template>
 
 <style scoped></style>

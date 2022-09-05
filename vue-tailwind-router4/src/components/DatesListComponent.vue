@@ -7,7 +7,7 @@
     <button
       class="w-full border-[1px] border-black bg-[#252525] text-white flex justify-center items-center h-[61px] uppercase font-bold"
       v-for="item in items">
-      <h3 class="uppercase font-extrabold h-fit">
+      <h3 class="uppercase font-extrabold h-fit text-[24px]">
           <span>{{item.day}}</span>
           <span class="px-[6px]">{{item.month}}</span>
           <span :class="{yellow: item.date === '18', orange: item.date === '19', red: item.date === '20', violet: item.date === '21', purple: item.date === '22', deepurple:item.date==='23', blue:item.date === '24'}">

@@ -2,7 +2,7 @@ const menuItems =
   [
     {
       name: 'VIEW EVENTS',
-      path: '/'
+      path: '/events'
     },
     {
       name: 'GALLERY',

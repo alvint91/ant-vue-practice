@@ -1,11 +1,11 @@
 <template>
-  <div class="flex justify-between items-center px-4 py-8 mx-auto bg-black">
+  <div class="flex justify-between items-center px-[25px] py-5 mx-auto bg-black h-[80px]">
     <div>
       <RouterLink to="/">
         <h3 class="text-2xl font-medium text-white text-500">LOGO</h3>
       </RouterLink>
     </div>
-    <div class="hidden space-x-8 lg:flex">
+    <div class="hidden space-x-8 lg:flex pr-0">
       <a href="#">Menu 1</a>
       <a href="#">Menu 2</a>
       <a href="#">Menu 3</a>
