@@ -1,15 +1,20 @@
 <template>
-  <!-- <div class="bg-black grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-    <div v-for="event in events">
-    </div>
-  </div> -->
-  <EventComponent />
+  <div class="p-[15px] bg-black">
+    <EventComponent v-for="item in test"/>
+  </div>
 </template>
 
 <script>
 import EventComponent from '../components/EventComponent.vue';
 
 export default {
+  data() {
+    return {
+      test: [
+        1,2,3,4,5
+      ]
+    }
+  },
   components: {
     EventComponent
   }

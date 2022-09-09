@@ -3,7 +3,7 @@
     class="bg-white px-4 text-center h-[30px] flex items-center justify-center">
     <h3>2022 DATES</h3>
   </div>
-  <div class="bg-black">
+  <div class="bg-black grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-7">
     <button
       class="w-full border-[1px] border-black bg-[#252525] text-white flex justify-center items-center h-[61px] uppercase font-bold"
       v-for="item in items">

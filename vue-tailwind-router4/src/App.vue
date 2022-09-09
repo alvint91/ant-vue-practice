@@ -6,20 +6,16 @@ import VenuesComponent from './components/VenuesComponent.vue';
 import DatesListComponent from './components/DatesListComponent.vue';
 import TalentComponent from './components/TalentComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
-// import DropDownComponent from './components/DropDownComponent.vue';
-import menuItems from './data.js'
+// import {menuItems } from './data.js'
 </script>
 
 <template>
   <header>
     <nav>
-      <!-- <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/photogallery">Gallery</RouterLink> -->
       <NavBar />
     </nav>
   </header>
 
-  <!-- <DropDownComponent /> -->
   <RouterView />
 
   <footer>
