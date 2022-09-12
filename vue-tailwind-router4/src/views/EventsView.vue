@@ -1,43 +1,31 @@
 <template>
-  <div class="p-[15px] bg-black">
-    <EventComponent v-for="item in test"/>
+<div class="bg-black items-center p-4">
+  <div v-for="day in eventDays">
+    <h3
+    class="p-[7px] uppercase text-[12px] font-black bg-white h-fit"
+    >
+      {{day}}
+    </h3>
+    <div v-for="element in data">
+      <EventComponent
+        v-if="element.date === day"
+        :artist="element.artist"
+        :venue="element.venue"
+        :date="day"
+        :time="element.time"
+      />
+    </div>
   </div>
+</div>
 </template>
 
-<script>
-import EventComponent from '../components/EventComponent.vue';
+<script setup>
+  import { ref, inject, computed } from 'vue'
+  import EventComponent from '../components/EventComponent.vue';
+  const data = inject('data')
+  const eventDays = inject('eventDays')
 
-export default {
-  data() {
-    return {
-      test: [
-        1,2,3,4,5
-      ]
-    }
-  },
-  components: {
-    EventComponent
-  }
-};
-// export default {
-//   data() {
-//     return {
-//       events: [
-//         {
-//           date: 'wednesday, may 18',
-//           artists: [
-//             {
-//               name: 'dom dolla b2b john summit',
-//               location: 'marquee dayclub',
-//               date: 'wednesday, may 18',
-//               time: '11:00 am'
-//             }
-//           ]
-//         }
-//       ]
-//     };
-//   }
-// };
 </script>
+
 
 <style scoped></style>

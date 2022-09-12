@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import GalleryView from '../views/GalleryView.vue';
 import EventsView from '../views/EventsView.vue';
+import SingleDateView from '../views/SingleDateView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,15 +16,16 @@ const router = createRouter({
       path: '/photogallery',
       name: 'photogallery',
       component: GalleryView
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      // component: () => import('../views/AboutView.vue')
     },
     {
       path: '/events',
       name: 'events',
       component: EventsView
+    },
+    {
+      path: '/events/:day',
+      name: 'event',
+      component: SingleDateView
     }
   ]
 });

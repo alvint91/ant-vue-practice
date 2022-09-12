@@ -6,7 +6,6 @@ import VenuesComponent from './components/VenuesComponent.vue';
 import DatesListComponent from './components/DatesListComponent.vue';
 import TalentComponent from './components/TalentComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
-// import {menuItems } from './data.js'
 </script>
 
 <template>

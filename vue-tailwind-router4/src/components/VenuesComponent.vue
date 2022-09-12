@@ -1,5 +1,6 @@
 <template>
   <div
+    id="venues"
     class="bg-white px-4 text-center h-[30px] flex items-center justify-center">
     <h3>2022 VENUES</h3>
   </div>
