@@ -1,21 +1,24 @@
 <template>
-  <!-- <div class="bg-black items-center p-4">
-    <div v-for="day in eventDays">
-      <h3 class="p-[7px] uppercase text-[12px] font-black bg-white h-fit">
-        {{ day }}
-      </h3>
-      <div v-for="element in data">
-
+  <div class="bg-black">
+    <h1 class="bg-white w-full text-center font-normal text-[16px] uppercase px-4 py-0">
+      2022 edc week events
+    </h1>
+    <div class="p-4">
+      <img :src="artistDetails.image" alt="">
+      <div class="text-white
+      ">
+        <h1>{{artist}}</h1>
+        <h3>{{artistDetails.date}}</h3>
+        <h2>{{artistDetails.time}}</h2>
+        <h2>{{artistDetails.venue}}</h2>
+      </div>
     </div>
-  </div> -->
-  <div class="h-[100vh] bg-white">
-    <h1>
+    <!-- <h1>
       {{artist}}
       {{artistDetails.date}}
       {{artistDetails.time}}
       {{artistDetails.venue}}
-    </h1>
-    <img :src="artistDetails.image" alt="">
+    </h1> -->
   </div>
 </template>
 

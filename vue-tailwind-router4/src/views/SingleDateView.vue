@@ -19,9 +19,8 @@
 <script setup>
 import { ref, inject, computed } from 'vue'
 import { useRoute } from 'vue-router'
-const route = useRoute()
-
 import EventComponent from '../components/EventComponent.vue'
+const route = useRoute()
 const data = inject('data')
 const eventDays = inject('eventDays');
 const day = route
