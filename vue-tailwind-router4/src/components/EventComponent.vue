@@ -11,7 +11,7 @@
         buy tickets
       </div>
     </RouterLink>
-    <RouterLink :to="`events/${artist}`" class="text-white text-[11px]">
+    <RouterLink :to="`event/${artist}`" class="text-white text-[11px]">
         <div
           class="px-[10px] py-[7px] w-[150px] text-center border-[#1da5fb] border-solid border-[1px] mb-2">
           more info

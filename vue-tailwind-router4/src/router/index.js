@@ -29,7 +29,7 @@ const router = createRouter({
       component: SingleDateView
     },
     {
-      path: '/events/:artist',
+      path: '/events/event/:artist',
       name: 'artist',
       component: MoreInfoView
     }
