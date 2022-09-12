@@ -15,7 +15,7 @@ import FooterComponent from '@/components/FooterComponent.vue';
     </nav>
   </header>
 
-  <RouterView />
+    <RouterView :key="$route.path"/>
 
   <footer>
     <DatesListComponent/>

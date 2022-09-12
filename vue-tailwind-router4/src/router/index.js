@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue';
 import GalleryView from '../views/GalleryView.vue';
 import EventsView from '../views/EventsView.vue';
 import SingleDateView from '../views/SingleDateView.vue';
+import MoreInfoView from '../views/MoreInfoView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/events/:day',
       name: 'event',
       component: SingleDateView
+    },
+    {
+      path: '/events/:artist',
+      name: 'artist',
+      component: MoreInfoView
     }
   ]
 });
