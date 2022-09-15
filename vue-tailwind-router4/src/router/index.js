@@ -29,10 +29,15 @@ const router = createRouter({
       component: SingleDateView
     },
     {
-      path: '/events/event/:artist',
+      path: '/event/:artist',
       name: 'artist',
       component: MoreInfoView
     }
+    // {
+    //   path: '/events/event/:artist',
+    //   name: 'artist',
+    //   component: MoreInfoView
+    // }
   ]
 });
 

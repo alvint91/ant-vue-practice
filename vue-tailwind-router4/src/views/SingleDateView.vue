@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { ref, inject, computed } from 'vue'
+import { ref, inject } from 'vue'
 import { useRoute } from 'vue-router'
 import EventComponent from '../components/EventComponent.vue'
 const route = useRoute()

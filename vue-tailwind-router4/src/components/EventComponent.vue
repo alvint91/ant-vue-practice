@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black uppercase h-fit p-5 font-bold">
+  <div class="bg-black uppercase h-fit p-5 font-black">
     <h2 class="text-[#1da5fb] text-[24px]">{{ artist }}</h2>
     <h3 class="text-white text-[15px]">{{ venue }}</h3>
     <h4 class="text-[#757575] text-[12px] mb-2">
@@ -11,7 +11,7 @@
         buy tickets
       </div>
     </RouterLink>
-    <RouterLink :to="`event/${artist}`" class="text-white text-[11px]">
+    <RouterLink :to="`/event/${artist}`" class="text-white text-[11px]">
         <div
           class="px-[10px] py-[7px] w-[150px] text-center border-[#1da5fb] border-solid border-[1px] mb-2">
           more info
