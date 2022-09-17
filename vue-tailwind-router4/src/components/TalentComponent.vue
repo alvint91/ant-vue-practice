@@ -5,7 +5,9 @@
   <div class="bg-black py-5 px-2.5">
     <ul class="text-center p-0 text-white uppercase font-bold dotsbetween">
       <li v-for="item in items" class="inline-block">
-        {{item.artist}}
+        <RouterLink :to="`/event/${item.artist}`">
+          {{item.artist}}
+        </RouterLink>
       </li>
     </ul>
   </div>

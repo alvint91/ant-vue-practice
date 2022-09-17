@@ -29,6 +29,11 @@ const router = createRouter({
       component: SingleDateView
     },
     {
+      path: '/events/venue/:venue',
+      name: 'venue',
+      component: SingleDateView
+    },
+    {
       path: '/event/:artist',
       name: 'artist',
       component: MoreInfoView

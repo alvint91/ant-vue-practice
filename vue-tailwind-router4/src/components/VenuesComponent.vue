@@ -7,38 +7,25 @@
   <div class="bg-black p-4">
     <button
       class="w-full border-[2px] border-black bg-[#252525] text-white flex justify-center items-center h-[100px]"
-      v-for="item in items">
+      v-for="venue in venues">
+      <RouterLink :to="`/events/venue/${venue}`">
+      <h1 class="uppercase h-fit">{{ venue }}</h1>
+      </RouterLink>
+
+
+  </button>
+  <!-- <h1 class="uppercase h-fit">{{ item }}</h1> -->
+    <!-- <RouterLink to:="`/events/venue`"
+      class="w-full border-[2px] border-black bg-[#252525] text-white flex justify-center items-center h-[100px]"
+      v-for="venue in venues">
       <h1 class="uppercase h-fit">{{ item }}</h1>
-    </button>
+    </RouterLink> -->
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      items: [
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club',
-        'club'
-      ]
-    };
-  },
-};
+<script setup>
+import { ref, inject } from 'vue'
+import { useRoute } from 'vue-router'
+const data = inject('data');
+const venues = [...new Set(data.map(item => item.venue))].sort()
 </script>

@@ -31,9 +31,6 @@
       </MenuItems>
     </transition>
   </Menu>
-  <!-- <RouterLink to="/events" class="text-white text-[11px]">
-    all events
-  </RouterLink> -->
   </div>
 </template>
 
