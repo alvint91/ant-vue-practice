@@ -11,8 +11,6 @@
       <RouterLink :to="`/events/venue/${venue}`">
       <h1 class="uppercase h-fit">{{ venue }}</h1>
       </RouterLink>
-
-
   </button>
   <!-- <h1 class="uppercase h-fit">{{ item }}</h1> -->
     <!-- <RouterLink to:="`/events/venue`"

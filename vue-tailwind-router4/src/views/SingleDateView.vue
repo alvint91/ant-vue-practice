@@ -1,27 +1,33 @@
 <template>
 <div v-if="eventOrDate" class="bg-black justify-center items-center text-white">
   <h1
-  class="bg-[#211d1d] w-full text-center font-bold text-[14px] uppercase p-4">
+  class="bg-[#211d1d] w-full text-center font-black text-[13px] uppercase px-4 py-3">
      showing all events on {{fullDay}}
   </h1>
-  <div v-for="item in data">
-    <EventComponent
-    v-if="item.date.includes(split)"
-    :artist="item.artist"
-    :venue="item.venue"
-    :date="item.date"
-    :time="item.time"
-    />
+  <div class="p-[15px]">
+    <h1 class="bg-white text-black font-black text-[11px] uppercase p-2">
+      {{fullDay}}
+    </h1>
+    <div v-for="item in data">
+      <EventComponent
+      v-if="item.date.includes(split)"
+      :artist="item.artist"
+      :venue="item.venue"
+      :date="item.date"
+      :time="item.time"
+      />
+    </div>
   </div>
 </div>
 <div v-else="eventOrDate" class="bg-black justify-center items-center text-white">
   <h1 class="bg-[#211d1d] w-full text-center font-bold text-[14px] uppercase p-4">
     showing all events at {{route.params.venue}}
   </h1>
-  <div v-for="item in data">
+  <div class="p-[15px]"></div>
+  <!-- <div v-for="item in data">
     <EventComponent v-if="item.venue.includes(venue)" :artist="item.artist" :venue="item.venue" :date="item.date"
       :time="item.time" />
-  </div>
+  </div> -->
 </div>
 </template>
 
