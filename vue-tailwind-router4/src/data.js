@@ -711,6 +711,5 @@ const data = [
 ];
 
 const eventDays = [...new Set(data.map(item => item.date))];
-// console.log(eventDays);
 
 export { menuItems, data, eventDays };
