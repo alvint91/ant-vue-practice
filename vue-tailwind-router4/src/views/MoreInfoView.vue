@@ -9,8 +9,12 @@
       class="mb-8">
       <div class="text-[#757575] uppercase font-black border-[#757575] border-b-[1px] pb-6 mb-6">
         <h1 class="text-[#1da5fb] text-[32px] leading-[1]">{{artist}}</h1>
-        <h2 class="text-[20px] text-white">{{artistDetails.venue}}</h2>
-        <h3 class="leading-[1]">{{artistDetails.date}}</h3>
+        <RouterLink :to="`/events/venue/${artistDetails.venue}`">
+          <h2 class="text-[20px] text-white">{{artistDetails.venue}}</h2>
+        </RouterLink>
+        <RouterLink :to="`/events/date/may-${artistDetails.date}`">
+          <h3 class="leading-[1]">{{artistDetails.date}}</h3>
+        </RouterLink>
         <h3 class="leading-[1]">{{artistDetails.time}}</h3>
       </div>
       <div class="text-[#757575]  border-[#757575] border-b-[1px] pb-6 mb-6">
