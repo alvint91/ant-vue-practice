@@ -67,7 +67,7 @@ const data = [
     artist: 'ann clue',
     date: 'thursday, may 19',
     time: '09:00 pm',
-    venue: 'downtown las vegas events center',
+    venue: 'downtown las vegas event center',
     image: 'https://dm3381rcqf07k.cloudfront.net/multisite.insomniac.com/wp-content/uploads/sites/56/2022/03/31113031/f93_edcwr_2022_de_ka_1080x1350_r03-640x800.png'
   },
   {
@@ -137,7 +137,7 @@ const data = [
     artist: 'boris brejcha',
     date: 'thursday, may 19',
     time: '09:00 pm',
-    venue: 'downtown las vegas events center',
+    venue: 'downtown las vegas event center',
     image: 'https://dm3381rcqf07k.cloudfront.net/multisite.insomniac.com/wp-content/uploads/sites/56/2022/03/31113031/f93_edcwr_2022_de_ka_1080x1350_r03-640x800.png'
   },
   {
@@ -250,7 +250,7 @@ const data = [
     artist: 'deux twins',
     date: 'friday, may 20',
     time: '10:00 pm',
-    venue: 'encoure beach club',
+    venue: 'encore beach club',
     image: 'https://dm3381rcqf07k.cloudfront.net/multisite.insomniac.com/wp-content/uploads/sites/56/2022/03/20045031/052022_EBCaN_WynnMusicWeek_DeuxTwins_Social_1080x1350-640x800.jpg'
   },
   {
@@ -495,7 +495,7 @@ const data = [
     artist: 'meduza',
     date: 'saturday, may 21',
     time: '10:00 pm',
-    venue: 'encoure beach club',
+    venue: 'encore beach club',
     image: 'https://dm3381rcqf07k.cloudfront.net/multisite.insomniac.com/wp-content/uploads/sites/56/2022/03/20045125/052122_EBCaN_WynnMusicWeek_Meduza_Social_1080x1350-640x800.jpg'
   },
   {

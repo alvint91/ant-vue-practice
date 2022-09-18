@@ -7,7 +7,7 @@
     <button
     class="w-full border-[1px] border-black bg-[#252525] text-white flex justify-center items-center h-[61px] uppercase font-bold"
     v-for="item in items">
-      <RouterLink :to="`/events/may-${item.date}`">
+      <RouterLink :to="`/events/date/may-${item.date}`">
         <h3 class="uppercase font-extrabold h-fit text-[24px]">
           <span>{{item.day}}</span>
           <span class="px-[6px]">{{item.month}}</span>
