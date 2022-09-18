@@ -19,15 +19,44 @@
     </div>
   </div>
 </div>
-<div v-else="eventOrDate" class="bg-black justify-center items-center text-white">
+<div v-else class="bg-black justify-center items-center text-white">
   <h1 class="bg-[#211d1d] w-full text-center font-bold text-[14px] uppercase p-4">
     showing all events at {{route.params.venue}}
   </h1>
-  <div class="p-[15px]"></div>
+  <div class="p-[15px]">
+
+    <div v-for="item in sortedDays">
+      <h3 class=" text-black p-[7px] uppercase text-[12px] font-black bg-white h-fit">
+        {{ item }}
+      </h3>
+      <div v-for="item in venueDays">hi</div>
+      <!-- <EventComponent
+        v-if="item.date.includes(item)"
+        :artist="item.artist"
+        :venue="item.venue"
+        :date="item.date"
+        :time="item.time"
+      /> -->
+    </div>
+
+  <!-- <div v-for="day in eventDays"> -->
+
+
+    <!-- <h3 class="p-[7px] uppercase text-[12px] font-black bg-white h-fit">
+      {{ day }}
+    </h3>
+    <div v-for="item in data">
+      <EventComponent v-if="item.date === day" :artist="item.artist" :venue="item.venue" :date="day" :time="item.time" />
+    </div>
+  </div> -->
+
+
+  <!-- </div> -->
   <!-- <div v-for="item in data">
     <EventComponent v-if="item.venue.includes(venue)" :artist="item.artist" :venue="item.venue" :date="item.date"
       :time="item.time" />
   </div> -->
+  </div>
 </div>
 </template>
 
@@ -62,37 +91,33 @@ const venue = computed(() => {
     return route.params.venue
   }
 })
-// const venue = computed(() => {
-//   if (eventOrDate.value === false) {
-//     return route.params.venue
-//   }
-// })
 
-if (eventOrDate.value === false) {
-  // console.log(route.params.venue)
-  console.log(venue.value)
-}
-// console.log(route.params.venue)
-// console.log(typeof route.params.venue)
+const venueDays = computed(() => {
+  return data.filter(event => event.venue.includes(route.params.venue))
+})
+// console.log(venueDays.value)
 
-// console.log(venue.value)
-// const split = day.params.day.split('-')[1]
-// const fullDay = eventDays.filter(day => day.includes(split))[0]
-// console.log(route.params.day)
+const uniqueVenueDays = computed(() => {
+  const unique = [...new Set(venueDays.value.map(item => item.date))]
+  return unique
+})
+// console.log(`uniqueVenueDays:`,uniqueVenueDays.value)
+// console.log(`uniqueVenueDays splitter:`,uniqueVenueDays.value[0].split(' ')[2])
 
-// console.log(route.params.venue.split(' '))
-// const venues = [...new Set(data.map(item => item.venue))].sort()
-// const venue = computed(() => {
-//   if (!eventOrDate.value) {
-//     return venues.filter(venue => venue.includes())
-//   }
-// })
-// console.log(venues)
-// const venues = [...new Set(data.map(item => item.venue))].sort()
-// if (eventOrDate.value) {
-//   let split = day.params.day.split('-')[1]
-//   let fullDay = eventDays.filter(day => day.includes(split))[0]
-// })
+const sortedDays = computed(() => {
+  let unsorted = uniqueVenueDays.value.slice(0)
+  unsorted.sort(function(a,b) {
+    console.log(`a:`,parseInt(a.split(' ')[2]))
+    console.log(`b:`,parseInt(b.split(' ')[2]))
+    let aa = parseInt(a.split(' ')[2])
+    let bb = parseInt(b.split(' ')[2])
+    let answer = aa - bb
+    return answer
+  })
+return unsorted
+})
+console.log(sortedDays.value)
+
 </script>
 
 <style scoped></style>
