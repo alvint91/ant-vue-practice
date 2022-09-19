@@ -48,9 +48,6 @@ const routeIncludesDate = computed(() => {
   return route.path.includes('date')
 })
 
-// console.log(route.path.includes('date'))
-// console.log(route.path.includes(day))
-
 const items = ref(
   [
     {

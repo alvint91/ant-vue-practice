@@ -5,19 +5,13 @@
     <h3>2022 VENUES</h3>
   </div>
   <div class="bg-black p-4">
-    <button
+    <RouterLink
+      v-for="venue in venues"
+      :to="`/events/venue/${venue}`"
       class="w-full border-[2px] border-black bg-[#252525] text-white flex justify-center items-center h-[100px]"
-      v-for="venue in venues">
-      <RouterLink :to="`/events/venue/${venue}`">
+    >
       <h1 class="uppercase h-fit">{{ venue }}</h1>
-      </RouterLink>
-  </button>
-  <!-- <h1 class="uppercase h-fit">{{ item }}</h1> -->
-    <!-- <RouterLink to:="`/events/venue`"
-      class="w-full border-[2px] border-black bg-[#252525] text-white flex justify-center items-center h-[100px]"
-      v-for="venue in venues">
-      <h1 class="uppercase h-fit">{{ item }}</h1>
-    </RouterLink> -->
+    </RouterLink>
   </div>
 </template>
 
