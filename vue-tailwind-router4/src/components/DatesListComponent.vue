@@ -7,12 +7,12 @@
   <div class="bg-black grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-7">
     <RouterLink
       v-for="item in items"
-      :class="{ active: item.date.includes(date)}"
+      :class="{ active: item.date.includes(date) }"
       class="w-full border-[1px] border-black bg-[#252525] text-white flex justify-center items-center h-[61px] uppercase font-bold"
       :to="`/events/date/may-${item.date}`">
       <h3
-      :class="{ active: item.date.includes(date)}"
-      class="uppercase font-extrabold h-fit text-[24px]">
+        :class="{ active: item.date.includes(date) }"
+        class="uppercase font-extrabold h-fit text-[24px]">
         <span>{{ item.day }}</span>
         <span class="px-[6px]">{{ item.month }}</span>
         <span
@@ -34,60 +34,71 @@
 </template>
 
 <script setup>
-import { ref, inject, computed } from 'vue'
-import { useRoute } from 'vue-router'
-const route = useRoute()
+import { ref, inject, computed, watch } from 'vue';
+import { useRoute } from 'vue-router';
+const route = useRoute();
 
 const date = computed(() => {
-if (route.path.includes('event')) {
-  return route.params.day.split('-')[1]
-}
-})
+  if (route.path.includes('date')) {
+    return route.params.day.split('-')[1];
+  }
+});
 
 const routeIncludesDate = computed(() => {
-  return route.path.includes('date')
-})
+  return route.path.includes('date');
+});
 
-const items = ref(
-  [
-    {
-      day: 'wednesday,',
-      month: 'may',
-      date: '18'
-    },
-    {
-      day: 'thursday,',
-      month: 'may',
-      date: '19'
-    },
-    {
-      day: 'friday,',
-      month: 'may',
-      date: '20'
-    },
-    {
-      day: 'saturday,',
-      month: 'may',
-      date: '21'
-    },
-    {
-      day: 'sunday,',
-      month: 'may',
-      date: '22'
-    },
-    {
-      day: 'monday,',
-      month: 'may',
-      date: '23'
-    },
-    {
-      day: 'tuesday,',
-      month: 'may',
-      date: '24'
-    }
-  ]
-)
 
+// watch(
+//   () => route.path,
+//   () => {
+//     return route.path.includes('date') ? console.log('bang') : console.log('rang')
+//     route.path.includes('date') ? isActive = ref(true) : isActive = ref(false)
+//     route.path.includes('date') ? isActive = ref(true) : isActive = ref(false)
+//     console.log(isActive.value)
+//     console.log(isActive.value)
+//     console.log(route.path)
+//     console.log(route.path.split('/').includes('date'))
+//   }
+// );
+
+const items = ref([
+  {
+    day: 'wednesday,',
+    month: 'may',
+    date: '18'
+  },
+  {
+    day: 'thursday,',
+    month: 'may',
+    date: '19'
+  },
+  {
+    day: 'friday,',
+    month: 'may',
+    date: '20'
+  },
+  {
+    day: 'saturday,',
+    month: 'may',
+    date: '21'
+  },
+  {
+    day: 'sunday,',
+    month: 'may',
+    date: '22'
+  },
+  {
+    day: 'monday,',
+    month: 'may',
+    date: '23'
+  },
+  {
+    day: 'tuesday,',
+    month: 'may',
+    date: '24'
+  }
+]);
 </script>
 
 <style scoped>
@@ -116,6 +127,6 @@ const items = ref(
 .active {
   background-color: #1da5fb;
   color: white;
-  font-size: 18px
+  font-size: 18px;
 }
 </style>

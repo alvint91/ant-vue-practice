@@ -38,11 +38,6 @@ const router = createRouter({
       name: 'artist',
       component: MoreInfoView
     }
-    // {
-    //   path: '/events/event/:artist',
-    //   name: 'artist',
-    //   component: MoreInfoView
-    // }
   ]
 });
 

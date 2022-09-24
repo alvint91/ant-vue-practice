@@ -21,6 +21,24 @@ import { ref, inject, computed } from 'vue';
 import EventComponent from '../components/EventComponent.vue';
 const data = inject('data');
 const eventDays = inject('eventDays');
+
+const unsortedDays = computed(() => {
+  const days = eventDays.map((element)=> {
+    return element.split(' ')[2]
+  })
+  return days
+})
+
+const sortedDays = computed(() => {
+  let unsorted = unsortedDays.value
+  unsorted.sort(function(a,b) {
+    return a - b
+  })
+  return unsorted
+})
+
+// console.log(unsortedDays.value)
+console.log(sortedDays.value)
 </script>
 
 <style scoped></style>
