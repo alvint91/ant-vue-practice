@@ -1,4 +1,3 @@
-
 <template>
   <div
     class="bg-[#1da5fb] px-4 text-center h-[55px] flex items-center justify-center">
@@ -6,27 +5,33 @@
   </div>
   <div class="bg-black p-6 text-white">
     <div class="w-full flex justify-center">
-      <span class="text-white mx-5" v-for="item in items">{{ item }}</span>
+      <RouterLink to="/">
+        <font-awesome-icon icon="fa-brands fa-facebook-square" class="mx-[10px] text-[30px]" />
+      </RouterLink>
+      <RouterLink to="/">
+        <font-awesome-icon icon="fa-brands fa-twitter-square" class="mx-[10px] text-[30px]" />
+      </RouterLink>
+      <RouterLink to="/">
+        <font-awesome-icon icon="fa-brands fa-instagram-square" class="mx-[10px] text-[30px]" />
+      </RouterLink>
+      <RouterLink to="/">
+        <font-awesome-icon icon="fa-brands fa-twitch" class="mx-[10px] text-[30px]" />
+      </RouterLink>
+      <RouterLink to="/">
+        <font-awesome-icon icon="fa-brands fa-tiktok" class="mx-[10px] text-[30px]" />
+      </RouterLink>
     </div>
-      <p class="text-center text-[10px] leading-3 my-4">
-        ABOUT EDC WEEK | CONTACT US | PRIVACY POLICY
-      </p>
-      <p class="text-center text-[10px] leading-3">
-        BY CONTINUING PAST THIS PAGE, YOU AGREE TO OUR TERMS OF USE. | WEB ACCESSIBILITY | DO NOT SELL MY INFO | ©2021
-        INSOMNIAC
-        HOLDINGS, LLC. ALL RIGHTS RESERVED
-      </p>
+    <p class="text-center text-[10px] leading-3 my-4">
+      ABOUT EDC WEEK | CONTACT US | PRIVACY POLICY
+    </p>
+    <p class="text-center text-[10px] leading-3">
+      BY CONTINUING PAST THIS PAGE, YOU AGREE TO OUR TERMS OF USE. | WEB
+      ACCESSIBILITY | DO NOT SELL MY INFO | ©2021 INSOMNIAC HOLDINGS, LLC. ALL
+      RIGHTS RESERVED
+    </p>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      items: ['1', '2', '3', '4', '5']
-    };
-  }
-};
-</script>
+<script></script>
 
 <style scoped></style>

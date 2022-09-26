@@ -1,6 +1,6 @@
 <template>
   <div class="bg-black items-center p-4">
-    <div v-for="day in eventDays">
+    <div v-for="day in sortedDaysArr">
       <h3 class="p-[7px] uppercase text-[12px] font-black bg-white h-fit">
         {{ day }}
       </h3>
@@ -24,7 +24,7 @@ const eventDays = inject('eventDays');
 
 const unsortedDays = computed(() => {
   const days = eventDays.map((element)=> {
-    return element.split(' ')[2]
+    return element.split(' ')
   })
   return days
 })
@@ -32,13 +32,20 @@ const unsortedDays = computed(() => {
 const sortedDays = computed(() => {
   let unsorted = unsortedDays.value
   unsorted.sort(function(a,b) {
-    return a - b
+  return a[2] - b[2]
   })
   return unsorted
 })
 
-// console.log(unsortedDays.value)
-console.log(sortedDays.value)
+const sortedDaysArr = computed(()=> {
+  const sorted = sortedDays.value.map((element)=> {
+    return element.join(' ')
+  })
+  return sorted
+})
+// console.log('unsortedDays:', unsortedDays.value)
+// console.log('sortedDays', sortedDays.value)
+console.log(sortedDaysArr.value)
 </script>
 
 <style scoped></style>
