@@ -1,7 +1,7 @@
 <template>
   <div
     id="artists"
-    class="bg-white px-4 text-center h-[30px] flex items-center justify-center sm:h-[40px] sm:text-[18px] sm:font-semibold">
+    class="bg-white px-4 text-center h-[30px] flex items-center justify-center sm:h-[40px] text-[16px] sm:text-[20px] md:text-[22px] sm:font-normal">
     <h3>2022 TALENT</h3>
   </div>
   <div class="bg-black py-5 px-2.5 sm:py-[30px] sm:px-5 md:p-[35px] flex justify-center">

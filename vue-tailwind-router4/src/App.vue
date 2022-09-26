@@ -5,7 +5,7 @@
     </nav>
   </header>
 
-  <RouterView class="mt-[80px]" :key="$route.path"/>
+  <RouterView class="mt-[80px] md:mt-[120px] lg:mt-[140px]" :key="$route.path"/>
 
   <footer>
     <DatesListComponent/>
@@ -24,5 +24,3 @@ import DatesListComponent from './components/DatesListComponent.vue';
 import TalentComponent from './components/TalentComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
 </script>
-
-<style scoped></style>

@@ -19,7 +19,7 @@
         </div>
         <div class="flex h-fit sm:mb-[-10px] lg:mb-auto md:self-end lg:mt-[10px] justify-end">
           <h3 class="text-right text-[17px] h-fit">sign up for our newsletter</h3>
-        </div>
+        </div>`
         <div class="flex self-end">
           <div class="lg:text-[16px] sm:font-semibold sm:text-[14px] lg:font-bold">
             <a href="#">view events</a>
