@@ -1,21 +1,25 @@
 <template>
   <div
     id="dates"
-    class="bg-white px-4 text-center h-[30px] flex items-center justify-center">
+    class="bg-white px-4 text-center h-[30px] flex items-center justify-center sm:h-[40px] sm:text-[18px] sm:font-semibold">
     <h3>2022 DATES</h3>
   </div>
-  <div class="bg-black grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-7">
+  <div
+    class="bg-black grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-7 md:p-[15px]">
     <RouterLink
       v-for="item in items"
       :class="{ active: item.date.includes(date) }"
-      class="w-full border-[1px] border-black bg-[#252525] text-white flex justify-center items-center h-[61px] uppercase font-bold"
+      class="w-full border-[1px] border-black bg-[#252525] text-white flex justify-center items-center h-[61px] uppercase font-bold sm:h-[114px]"
       :to="`/events/date/may-${item.date}`">
       <h3
         :class="{ active: item.date.includes(date) }"
-        class="uppercase font-extrabold h-fit text-[24px]">
-        <span>{{ item.day }}</span>
-        <span class="px-[6px]">{{ item.month }}</span>
+        class="uppercase font-extrabold h-fit text-[23px] sm:text-center sm:m-0 md:p-0">
+        <span class="sm:block sm:leading-[.8] sm:text-[17px]">{{
+          item.day
+        }}</span>
+        <span class="px-[6px] sm:block sm:leading-[.8]">{{ item.month }}</span>
         <span
+          class="sm:text-[2.8rem] sm:block sm:leading-[.8]"
           :class="{
             yellow: item.date === '18',
             orange: item.date === '19',
@@ -47,7 +51,6 @@ const date = computed(() => {
 const routeIncludesDate = computed(() => {
   return route.path.includes('date');
 });
-
 
 // watch(
 //   () => route.path,
