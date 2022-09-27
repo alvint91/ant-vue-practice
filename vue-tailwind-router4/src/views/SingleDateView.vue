@@ -1,43 +1,36 @@
 <template>
   <div class="bg-black justify-center items-center text-white">
     <h1
-      class="bg-[#211d1d] w-full text-center font-black text-[13px] uppercase px-4 py-3">
+      class="bg-[#211d1d] w-full text-center font-black text-[14.4px] sm:text-[16px] lg:text-[18px] uppercase px-4 py-[15px] leading-none">
       {{
         eventOrDate
           ? `showing all events on ${fullDay}`
           : `showing all events at ${route.params.venue}`
       }}
     </h1>
-    <div v-if="eventOrDate" class="p-[15px]">
-      <h1 class="bg-white text-black font-black text-[11px] uppercase p-2">
-        {{ fullDay }}
-      </h1>
-      <div v-for="item in data">
-        <EventComponent
-          v-if="item.date.includes(split)"
-          :artist="item.artist"
-          :venue="item.venue"
-          :date="item.date"
-          :time="item.time"
-          :image="item.image"
-          />
-      </div>
+  <div class="flex justify-center">
+<div v-if="eventOrDate" class="p-[15px] w-[1130px]">
+  <h1 class="bg-white text-black font-black text-[12px] sm:text-[14px] md:text-[18px] uppercase p-2">
+    {{ fullDay }}
+  </h1>
+  <div v-for="item in data">
+    <EventComponent v-if="item.date.includes(split)" :artist="item.artist" :venue="item.venue" :date="item.date"
+      :time="item.time" :image="item.image" />
+  </div>
+</div>
+<div v-else class="p-[15px]">
+  <div v-for="item in sortedDays">
+    <h1 class="bg-white text-black font-black text-[11px] uppercase p-2">
+      {{ item }}
+    </h1>
+    <div v-for="day in venueDays">
+      <EventComponent v-if="day.date.includes(item)" :artist="day.artist" :venue="day.venue" :date="day.date"
+        :time="day.time" />
     </div>
-    <div v-else class="p-[15px]">
-      <div v-for="item in sortedDays">
-        <h1 class="bg-white text-black font-black text-[11px] uppercase p-2">
-          {{ item }}
-        </h1>
-        <div v-for="day in venueDays">
-          <EventComponent
-            v-if="day.date.includes(item)"
-            :artist="day.artist"
-            :venue="day.venue"
-            :date="day.date"
-            :time="day.time" />
-        </div>
-      </div>
-    </div>
+  </div>
+</div>
+  </div>
+
   </div>
 </template>
 
