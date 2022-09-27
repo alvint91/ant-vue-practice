@@ -685,7 +685,7 @@ const data = [
     date: 'friday, may 20',
     time: '11:00 am',
     venue: 'marquee dayclub',
-    image: ''
+    image: 'https://dm3381rcqf07k.cloudfront.net/multisite.insomniac.com/wp-content/uploads/sites/56/2022/03/01025202/220520-MDC-EDC_Vintage-Culture_1080x1350-640x800.jpg'
   },
   {
     artist: 'william black',
