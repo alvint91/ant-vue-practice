@@ -1,92 +1,96 @@
 <template>
-<div class="bg-black justify-center items-center text-white">
-  <h1 class="bg-[#211d1d] w-full text-center font-black text-[13px] uppercase px-4 py-3">
-    {{ eventOrDate ? `showing all events on ${fullDay}` : `showing all events at ${route.params.venue}`}}
-  </h1>
-  <div v-if="eventOrDate" class="p-[15px]">
-    <h1 class="bg-white text-black font-black text-[11px] uppercase p-2">
-      {{fullDay}}
+  <div class="bg-black justify-center items-center text-white">
+    <h1
+      class="bg-[#211d1d] w-full text-center font-black text-[13px] uppercase px-4 py-3">
+      {{
+        eventOrDate
+          ? `showing all events on ${fullDay}`
+          : `showing all events at ${route.params.venue}`
+      }}
     </h1>
-    <div v-for="item in data">
-      <EventComponent
-        v-if="item.date.includes(split)"
-        :artist="item.artist"
-        :venue="item.venue"
-        :date="item.date"
-        :time="item.time"
-      />
-    </div>
-  </div>
-  <div v-else class="p-[15px]">
-    <div v-for="item in sortedDays">
+    <div v-if="eventOrDate" class="p-[15px]">
       <h1 class="bg-white text-black font-black text-[11px] uppercase p-2">
-        {{ item }}
+        {{ fullDay }}
       </h1>
-      <div v-for="day in venueDays">
+      <div v-for="item in data">
         <EventComponent
-          v-if="day.date.includes(item)"
-          :artist="day.artist"
-          :venue="day.venue"
-          :date="day.date"
-          :time="day.time"
-        />
+          v-if="item.date.includes(split)"
+          :artist="item.artist"
+          :venue="item.venue"
+          :date="item.date"
+          :time="item.time"
+          :image="item.image"
+          />
+      </div>
+    </div>
+    <div v-else class="p-[15px]">
+      <div v-for="item in sortedDays">
+        <h1 class="bg-white text-black font-black text-[11px] uppercase p-2">
+          {{ item }}
+        </h1>
+        <div v-for="day in venueDays">
+          <EventComponent
+            v-if="day.date.includes(item)"
+            :artist="day.artist"
+            :venue="day.venue"
+            :date="day.date"
+            :time="day.time" />
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script setup>
-import { ref, inject, computed } from 'vue'
-import { useRoute } from 'vue-router'
-import EventComponent from '../components/EventComponent.vue'
-const route = useRoute()
-const data = inject('data')
+import { ref, inject, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import EventComponent from '../components/EventComponent.vue';
+const route = useRoute();
+const data = inject('data');
 const eventDays = inject('eventDays');
-const day = route
+const day = route;
 
 const eventOrDate = computed(() => {
-  return route.path.split('/').includes('date')
-})
+  return route.path.split('/').includes('date');
+});
 
 const split = computed(() => {
   if (eventOrDate.value) {
-    return day.params.day.split('-')[1]
+    return day.params.day.split('-')[1];
   }
-})
+});
 
 const fullDay = computed(() => {
   if (eventOrDate.value) {
-    return eventDays.filter(day => day.includes(split.value))[0]
+    return eventDays.filter(day => day.includes(split.value))[0];
   }
-})
+});
 
 const venue = computed(() => {
   if (eventOrDate.value === false) {
-    return route.params.venue
+    return route.params.venue;
   }
-})
+});
 
 const venueDays = computed(() => {
-  return data.filter(event => event.venue.includes(route.params.venue))
-})
+  return data.filter(event => event.venue.includes(route.params.venue));
+});
 
 const uniqueVenueDays = computed(() => {
-  const unique = [...new Set(venueDays.value.map(item => item.date))]
-  return unique
-})
+  const unique = [...new Set(venueDays.value.map(item => item.date))];
+  return unique;
+});
 
 const sortedDays = computed(() => {
-  let unsorted = uniqueVenueDays.value.slice(0)
-  unsorted.sort(function(a,b) {
-    let aa = parseInt(a.split(' ')[2])
-    let bb = parseInt(b.split(' ')[2])
-    let answer = aa - bb
-    return answer
-  })
-return unsorted
-})
-
+  let unsorted = uniqueVenueDays.value.slice(0);
+  unsorted.sort(function (a, b) {
+    let aa = parseInt(a.split(' ')[2]);
+    let bb = parseInt(b.split(' ')[2]);
+    let answer = aa - bb;
+    return answer;
+  });
+  return unsorted;
+});
 </script>
 
 <style scoped></style>

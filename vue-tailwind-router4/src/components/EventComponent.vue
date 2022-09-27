@@ -1,22 +1,29 @@
 <template>
-  <div class="bg-black uppercase h-fit p-5 font-black">
-    <h2 class="text-[#1da5fb] text-[24px]">{{ artist }}</h2>
-    <h3 class="text-white text-[15px]">{{ venue }}</h3>
-    <h4 class="text-[#757575] text-[12px] mb-2">
-      <p>{{ date }}</p>
-      <p>{{ time }}</p>
-    </h4>
-    <RouterLink to="/" class="text-white text-[11px]">
-      <div class="bg-[#1da5fb] px-[10px] py-[7px] w-[150px] text-center mb-2">
-        buy tickets
+  <div class="bg-black uppercase h-fit p-5 font-black sm:flex sm:justify-between">
+    <div class="flex">
+      <img class="hidden md:block h-[120px] w-[120px]" :src="image" alt="">
+      <div>
+        <h2 class="text-[#1da5fb] text-[24px]">{{ artist }}</h2>
+        <h3 class="text-white text-[15px]">{{ venue }}</h3>
+        <h4 class="text-[#757575] text-[12px] mb-2">
+          <p>{{ date }}</p>
+          <p>{{ time }}</p>
+        </h4>
       </div>
-    </RouterLink>
-    <RouterLink :to="`/event/${artist}`" class="text-white text-[11px]">
-        <div
-          class="px-[10px] py-[7px] w-[150px] text-center border-[#1da5fb] border-solid border-[1px] mb-2">
+    </div>
+
+    <div>
+      <RouterLink to="/" class="text-white text-[11px]">
+        <div class="bg-[#1da5fb] px-[10px] py-[7px] w-[150px] text-center mb-2">
+          buy tickets
+        </div>
+      </RouterLink>
+      <RouterLink :to="`/event/${artist}`" class="text-white text-[11px]">
+        <div class="px-[10px] py-[7px] w-[150px] text-center border-[#1da5fb] border-solid border-[1px] mb-2">
           more info
         </div>
-    </RouterLink>
+      </RouterLink>
+    </div>
   </div>
 </template>
 
@@ -37,6 +44,10 @@ const props = defineProps({
   time: {
     type: String,
     default: 'event time'
+  },
+  image: {
+    type: String,
+    default: null
   }
 });
 </script>
