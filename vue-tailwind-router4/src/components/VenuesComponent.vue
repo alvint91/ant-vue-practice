@@ -9,13 +9,10 @@
     <RouterLink
       v-for="venue in venues"
       :to="`/events/venue/${venue}`"
-      class="w-full border-[2px] border-black bg-[#1e1e1e] text-white flex justify-center items-center h-[100px] md:h-[150px] lg:h-[170px]">
-      <h1 class="uppercase h-fit">{{ venue }}</h1>
-      <!-- <img class="h-1/2" :src="`../assets/svgs/${venue}.svg`" alt=""> -->
-      <!-- <img class="h-1/2" :src="{{'../assets/svgs/'+{{venue}}+'.svg'}}" alt=""> -->
-      <!-- <img class="h-1/2" :src="'../assets/svgs/'+{{venue}}+'.svg'" alt=""> -->
-      <!-- <img class="h-1/2" :src="'../assets/svgs/'{{venue}}'.svg'" alt=""> -->
+      class="w-full border-[2px] border-black bg-[#1e1e1e] text-white flex justify-center items-center h-[100px] md:h-[150px] lg:h-[170px] hover:bg-[#1da5fb] transition ease-in-out delay-75">
+      <img class="h-1/2 sm:h-1/3" :src="`../../public/assets/${venue}.svg`" alt="">
     </RouterLink>
+
   </div>
 </template>
 
@@ -26,5 +23,3 @@ const data = inject('data');
 const venues = [...new Set(data.map(item => item.venue))].sort();
 console.log(venues);
 </script>
-
-<style scoped></style>

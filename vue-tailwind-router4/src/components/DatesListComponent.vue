@@ -7,9 +7,9 @@
   <div
     class="bg-black grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-7 sm:p-[15px]">
     <RouterLink
+      :class="{ 'bg-[#1da5fb]': item.date.includes(date) }"
       v-for="item in items"
-      :class="{ active: item.date.includes(date) }"
-      class="w-full border-[1px] border-black bg-[#252525] text-white flex justify-center items-center h-[61px] uppercase font-bold sm:h-[114px] lg:h-[124px]"
+      class="w-full border-[1px] border-black bg-[#252525] text-white flex justify-center items-center h-[61px] uppercase font-bold sm:h-[114px] md:h-[124px] lg:h-[174px]"
       :to="`/events/date/may-${item.date}`">
       <h3
         :class="{ active: item.date.includes(date) }"
@@ -28,7 +28,7 @@
             purple: item.date === '22',
             deepurple: item.date === '23',
             blue: item.date === '24',
-            active: item.date.includes(date)
+            'active-number': item.date.includes(date)
           }">
           {{ item.date }}
         </span>
@@ -130,6 +130,9 @@ const items = ref([
 .active {
   background-color: #1da5fb;
   color: white;
-  font-size: 18px;
+}
+
+.active-number {
+  color: white;
 }
 </style>

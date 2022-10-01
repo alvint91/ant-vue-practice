@@ -1,10 +1,8 @@
 <template>
-  <!-- <div class="flex justify-between items-center px-[25px] py-5 mx-auto bg-black h-[80px] fixed top-0 w-full sm:p-5 sm:h-[140px]"> -->
-    <!-- <div class="flex justify-between items-center px-[25px] py-5 mx-auto bg-black h-[80px] sticky top-0 w-full sm:p-5 sm:h-[140px]"> -->
-    <div class="flex justify-between items-center px-[25px] py-5 mx-auto bg-black h-[80px] fixed top-0 w-full sm:p-5 md:h-[120px] lg:h-[140px]">
+    <div class="flex justify-between items-center p-2 md:px-[25px] md:py-5 mx-auto bg-black h-[80px] fixed top-0 w-full sm:p-5 md:h-[120px] lg:h-[140px]">
       <div>
         <RouterLink to="/">
-          <h3 class="text-2xl font-medium text-white text-500">LOGO</h3>
+          <img class="h-[60px] md:h-[80px] lg:h-[100px]" src="../assets/svgs/edclogo.svg" alt="">
         </RouterLink>
       </div>
       <div class="hidden text-white text-[14px] md:grid md:grid-cols-1 md:h-full pr-0 uppercase font-semibold">
@@ -22,15 +20,21 @@
         </div>
         <div class="flex self-end">
           <div class="lg:text-[16px] sm:font-semibold sm:text-[14px] lg:font-bold">
-            <a href="#">view events</a>
+            <RouterLink to="/events">
+              view events
+            </RouterLink>
             <span class="line sm:px-[10px] lg:px-[15px]">|</span>
-            <a href="#">gallery</a>
+            <RouterLink to="/photogallery">
+              gallery
+            </RouterLink>
             <span class="line sm:px-[10px] lg:px-[15px]">|</span>
-            <a href="#">archive</a>
+            <RouterLink to="/">
+              archive
+            </RouterLink>
             <span class="line sm:px-[10px] lg:px-[15px]">|</span>
-            <a href="#">hotels</a>
+            <a href="https://lasvegas.electricdaisycarnival.com/travel/hotels/" target="_blank">hotels</a>
             <span class="line sm:px-[10px] lg:px-[15px]">|</span>
-            <a href="#">edc las vegas</a>
+            <a href="https://lasvegas.electricdaisycarnival.com/" target="_blank">edc las vegas</a>
           </div>
         </div>
       </div>

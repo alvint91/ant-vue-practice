@@ -6,14 +6,14 @@
     </h1>
     <div class="flex justify-center">
       <div class="p-10 md:grid grid-cols-2 w-[1100px]">
-        <div>
-          <img :src="artistDetails.image" class="mb-8" />
+        <div class="flex justify-center">
+          <img :src="artistDetails.image" class="mb-8 md:mb-0" />
         </div>
         <div class="md:pl-[30px]">
           <div class="text-[#757575] uppercase font-black border-[#757575] border-b-[1px] pb-6 mb-6">
-            <h1 class="text-[#1da5fb] text-[32px] leading-[1]">{{ artist }}</h1>
+            <h1 class="text-[#1da5fb] text-[32px] leading-[1] hover:text-white">{{ artist }}</h1>
             <RouterLink :to="`/events/venue/${artistDetails.venue}`">
-              <h2 class="text-[20px] text-white">{{ artistDetails.venue }}</h2>
+              <h2 class="text-[20px] text-white hover:text-[#1da5fb]">{{ artistDetails.venue }}</h2>
             </RouterLink>
             <RouterLink :to="`/events/date/may-${artistDetails.date}`">
               <h3 class="leading-[1]">{{ artistDetails.date }}</h3>
@@ -35,16 +35,16 @@
             </p>
           </div>
           <div class="text-white text-center font-black uppercase text-[14px]">
-            <RouterLink to="/">
-              <div class="w-full md:w-2/5 bg-[#1da5fb] px-[10px] py-[7px] mb-6">
+            <a href="https://lasvegas.electricdaisycarnival.com/" target="_blank">
+              <div class="w-full md:w-2/5 bg-[#1da5fb] px-[10px] py-[7px] mb-6 hover:bg-[#fdb630] transition ease-in-out delay-75">
                 buy tickets
               </div>
-            </RouterLink>
-            <RouterLink to="/">
-              <div class="w-full md:w-2/5 px-[10px] py-[7px] border-[#1da5fb] border-solid border-[1px] mb-2">
+            </a>
+            <a href="https://www.facebook.com/EDCweek/" target="_blank">
+              <div class="w-full md:w-2/5 px-[10px] py-[7px] border-[#1da5fb] border-solid border-[1px] mb-2 hover:bg-[#1da5fb] transition ease-in-out delay-75">
                 facebook page
               </div>
-            </RouterLink>
+            </a>
           </div>
         </div>
 

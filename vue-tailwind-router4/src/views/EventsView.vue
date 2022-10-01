@@ -1,7 +1,8 @@
 <template>
-  <div class="bg-black items-center p-4">
+<div class="flex justify-center bg-black">
+  <div class="bg-black items-center p-4 w-[1130px]">
     <div v-for="day in sortedDaysArr">
-      <h3 class="p-[7px] uppercase text-[12px] font-black bg-white h-fit">
+      <h3 class="bg-white text-black font-black text-[12px] sm:text-[14px] md:text-[18px] uppercase p-2">
         {{ day }}
       </h3>
       <div v-for="item in data">
@@ -10,10 +11,12 @@
           :artist="item.artist"
           :venue="item.venue"
           :date="day"
-          :time="item.time" />
+          :time="item.time"
+          :image="item.image"/>
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>

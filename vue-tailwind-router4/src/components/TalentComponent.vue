@@ -7,7 +7,7 @@
   <div class="bg-black py-5 px-2.5 sm:py-[30px] sm:px-5 md:p-[35px] flex justify-center">
     <ul
       class="text-[14.4px] tracking-tight sm:text-[16.8px] md:text-[19.2px] lg:text-[21.6px] xl:text-2xl text-center p-0 text-white uppercase font-[800] dotsbetween max-w-[1150px]">
-      <li v-for="item in items" class="inline-block">
+      <li v-for="item in items" class="inline-block hover:text-[#1da5fb] transition ease-in-out delay-75">
         <RouterLink :to="`/event/${item.artist}`">
           {{ item.artist }}
         </RouterLink>
