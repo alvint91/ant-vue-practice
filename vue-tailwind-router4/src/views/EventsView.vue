@@ -48,7 +48,7 @@ const sortedDaysArr = computed(()=> {
 })
 // console.log('unsortedDays:', unsortedDays.value)
 // console.log('sortedDays', sortedDays.value)
-console.log(sortedDaysArr.value)
+// console.log(sortedDaysArr.value)
 </script>
 
 <style scoped></style>

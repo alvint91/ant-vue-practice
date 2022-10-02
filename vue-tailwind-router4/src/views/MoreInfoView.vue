@@ -11,9 +11,9 @@
         </div>
         <div class="md:pl-[30px]">
           <div class="text-[#757575] uppercase font-black border-[#757575] border-b-[1px] pb-6 mb-6">
-            <h1 class="text-[#1da5fb] text-[32px] leading-[1] hover:text-white">{{ artist }}</h1>
+            <h1 class="text-[#1da5fb] text-[32px] leading-[1] w-fit hover:text-white transition ease-in-out delay-75">{{ artist }}</h1>
             <RouterLink :to="`/events/venue/${artistDetails.venue}`">
-              <h2 class="text-[20px] text-white hover:text-[#1da5fb]">{{ artistDetails.venue }}</h2>
+              <h2 class="text-[20px] text-white w-fit hover:text-[#1da5fb] transition ease-in-out delay-75">{{ artistDetails.venue }}</h2>
             </RouterLink>
             <RouterLink :to="`/events/date/may-${artistDetails.date}`">
               <h3 class="leading-[1]">{{ artistDetails.date }}</h3>

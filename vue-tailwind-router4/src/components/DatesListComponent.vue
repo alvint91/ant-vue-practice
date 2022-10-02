@@ -7,9 +7,9 @@
   <div
     class="bg-black grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-7 sm:p-[15px]">
     <RouterLink
-      :class="{ 'bg-[#1da5fb]': item.date.includes(date) }"
+      :class="{ active: item.date.includes(date) }"
       v-for="item in items"
-      class="w-full border-[1px] border-black bg-[#252525] text-white flex justify-center items-center h-[61px] uppercase font-bold sm:h-[114px] md:h-[124px] lg:h-[174px]"
+      class="w-full border-[1px] border-black bg-[#252525] text-white flex justify-center items-center h-[61px] uppercase font-bold sm:h-[114px] md:h-[124px] lg:h-[174px] date-item"
       :to="`/events/date/may-${item.date}`">
       <h3
         :class="{ active: item.date.includes(date) }"
@@ -51,19 +51,6 @@ const date = computed(() => {
 const routeIncludesDate = computed(() => {
   return route.path.includes('date');
 });
-
-// watch(
-//   () => route.path,
-//   () => {
-//     return route.path.includes('date') ? console.log('bang') : console.log('rang')
-//     route.path.includes('date') ? isActive = ref(true) : isActive = ref(false)
-//     route.path.includes('date') ? isActive = ref(true) : isActive = ref(false)
-//     console.log(isActive.value)
-//     console.log(isActive.value)
-//     console.log(route.path)
-//     console.log(route.path.split('/').includes('date'))
-//   }
-// );
 
 const items = ref([
   {
@@ -134,5 +121,14 @@ const items = ref([
 
 .active-number {
   color: white;
+}
+
+.date-item:hover span{
+  background-color: #1da5fb;
+  color: white;
+}
+.date-item:hover {
+  background-color: #1da5fb;
+  color: white
 }
 </style>
