@@ -22,9 +22,5 @@ import { ref, inject } from 'vue';
 import { useRoute } from 'vue-router';
 const data = inject('data');
 const venues = [...new Set(data.map(item => item.venue))].sort();
-
-const getImgUrl= (resourceName) => {
-  return require('../assets/' + resourceName + '.svg');
-}
 //console.log(venues);
 </script>
